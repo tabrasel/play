@@ -1,1 +1,1 @@
-Using data from https://data.cityofnewyork.us/api/views/25th-nujf/rows.xml?accessType=DOWNLOAD
+Using data from [this dataset](https://data.cityofnewyork.us/api/views/25th-nujf/rows.csv?accessType=DOWNLOAD)
