@@ -1,0 +1,4 @@
+In YEAR we found records for NUM_BABIES babies!
+
+Of these NUM_BABIES, the 5 most popular names were:
+	POPULAR_NAMES
