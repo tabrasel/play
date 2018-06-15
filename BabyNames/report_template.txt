@@ -1,4 +1,4 @@
-In YEAR we found records for NUM_BABIES babies!
+In __YEAR__ we found records for __NUM_BABIES__ babies!
 
-Of these NUM_BABIES, the 5 most popular names were:
-	POPULAR_NAMES
+Of these __NUM_BABIES__, the 5 most popular names were:
+	__POPULAR_NAMES__
