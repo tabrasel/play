@@ -1,0 +1,11 @@
+.container {
+	background-color: yellow;
+}
+
+.container-fluid {
+	background-color: magenta;
+}
+
+p {
+	margin: 10px 10px;
+}

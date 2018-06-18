@@ -33,3 +33,7 @@ header {
 	margin-bottom: 15px;
 	padding: 5px;
 }
+
+.nav-link {
+	border: 10px solid #ddd;
+}
