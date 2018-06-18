@@ -1,11 +1,43 @@
+/*
 .container {
 	background-color: yellow;
 }
 
 .container-fluid {
-	background-color: magenta;
+	background-color: orange;
+}
+
+.row {
+	background-color: cyan;
+	border: 1px dashed black;
+}
+
+.col-lg-3 {
+	background-color: tomato;
+	border: 1px dashed black;
+}
+
+.col-lg-4 {
+	border: 1px dashed black;
+}
+
+.col-lg-9 {
+	background-color: brown;
+	border: 1px dashed black;
+}
+*/
+
+h1, h2 {
+	margin: 10px 0px;
+}
+
+.row {
+	margin: 10px 0px;
+	clear: left;
+	
 }
 
 p {
-	margin: 10px 10px;
+	margin: 0px 0px;
+	background-color: lightgray;
 }

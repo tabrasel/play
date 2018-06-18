@@ -16,34 +16,263 @@
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 		
 		<h1>The Bootstrap Playground</h1>
+		<h6>Learning Bootstrap through example</h6>
 
+		<h2 class="text-center">Containers</h2>
 		<div class="container">
 			<p>
-				This is a regular old "container". I don't think this one spans the whole width of the parent, but let's see. This bad boy is left aligned so I just want to write enough to span a couple lines. By defaut it looks like the container itself is horizontally centered within its parent which is actually really nice.
+				This is a regular old <code>container</code>. I don't think this one spans the whole width of the parent, but let's see. This bad boy is left aligned so I just want to write enough to span a couple lines. By defaut it looks like the container itself is horizontally centered within its parent which is actually really nice.
 			</p>
 		</div>
+
+		<br>
+
 		<div class="container-fluid">
 			<p>
-				Now I know that was very fun and all, but let's try out the "container-fluid", which I believe actually spans the whole width of the parent. Looks like it does just that. Nice. What I really want to know though is how a parent might be affected by having one of these in it, or how containers influence each other in general. Let's try that next.
+				Now I know that was very fun and all, but let's try out the <code>container-fluid</code>, which I believe actually spans the whole width of the parent. Looks like it does just that. Nice. What I really want to know though is how a parent might be affected by having one of these in it, or how containers influence each other in general. Let's try that next.
 			</p>
 		</div>
+
+		<br>
+
 		<div class="container">
 			<div class="container-fluid">
 				<p>
-					Alright! a fluid-container in a regular container! I notice I can still see a bit of the top container, and also some space between the the paragraph and its own parent container. Looking at the box model, I see that both types of container have a padding of 15px to the left and right. I also notice that this whole section is just as wide as the first container div I made, which must mean that the fluid container does not influence the width of its parent. Good thing to keep in mind.
-				</p>
-			</div>
-		</div>
-		<div class="container-fluid">
-			<div class="container">
-				<p>
-					This is an example of a container inside a fluid container. I'm going to predict that this paragraph inside will be located in the same place as the first container div I made way up top. Cool, I was right, the fluid container padding doesn't really affect its contents(at least with this big of a screen).
+					Alright! a <code>fluid-container</code> in a regular <code>container</code>! I notice I can still see a bit of the top container, and also some space between the the paragraph and its own parent container. Looking at the box model, I see that both types of container have a padding of 15px to the left and right. I also notice that this whole section is just as wide as the first container div I made, which must mean that the fluid container does not influence the width of its parent. Good thing to keep in mind.
 				</p>
 			</div>
 		</div>
 
+		<br>
+
+		<div class="container-fluid">
+			<div class="container">
+				<p>
+					This is an example of a <code>container</code> inside a <code>fluid-container</code>. I'm going to predict that this paragraph inside will be located in the same place as the first container div I made way up top. Cool, I was right, the fluid container padding doesn't really affect its contents (at least with this big of a screen). But when I make the screen very narrow, both types of nested containers have the same width since now all of their padding takes effect.
+				</p>
+			</div>
+		</div>
+
+		<h2 class="text-center">The Grid System</h2>
 		<div class="container">
-			
+			<div class="row">
+				<p>
+					We're gonna be diving into the grid system now. Before things get too off the rails, what does a row do for us? Let's take a look. Woah! For some reason I can't see the "container"'s horizontal padding! The box model is telling me that "row"s have horizontal margins of -15px, meaning that they exactly counteract the <code>container</code> padding of 15px. Therefore it appears that the row fits <em>exactly</em> within the container with no space in between.
+				</p>
+			</div>
+		</div>
+
+		<br>
+
+		<div class="container">
+			<div class="row">
+				<p>
+					Now I'm curious: How about a <code>container</code> just filled with a few rows?
+				</p>
+			</div>
+			<div class="row">
+				<p>
+					Row numbah two.
+				</p>
+			</div>
+			<div class="row">
+				<p>
+					The Three Musketeers. No curveballs here.
+				</p>
+			</div>
+		</div>
+
+		<br>
+
+		<div class="container-fluid">
+			<div class="row">
+				<p>
+					How about a <code>fluid-container</code> with rows?
+				</p>
+			</div>
+			<div class="row">
+				<p>
+					George II.
+				</p>
+			</div>
+			<div class="row">
+				<p>
+					The Three Amigos. Again, no curveballs. The rows span the <em>entire</em> width and height of their parent container.
+				</p>
+			</div>
+		</div>
+
+		<br>
+
+		<div class="container text-justify">
+			<div class="row">
+				<div class="col-lg-4">
+					<p>
+						Let's get into columns now. I still am not sure how to use sm, lg, and whatever medium is. This is a <code>col-lg-4</code>.
+					</p>
+				</div>
+				<div class="col-lg-4">
+					<p>
+						I think the <code>lg</code> part means that these columns will work as normal columns until the screen size is <code>lg</code>, which means 992px wide.
+					</p>
+				</div>
+				<div class="col-lg-4">
+					<p>
+						If the screen is any smaller that lg, then the columns are broken up into individual rows.
+					</p>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col-lg-3">
+					<p>
+						Adding a second row doesn't give any strange results, thank goodness. Let's play around with the column widths, shall we? This row is also has its items center aligned!
+					</p>
+				</div>
+				<div class="col-lg-9">
+					<p>
+						All in all, grids seem pretty manageable. The documentation says to only put content (like the <code>&ltp&gt</code> all this is written in) inside columns. So if you had a row in a grid that wasn't broken up into columns, would that mean you'd have to create one column in that row? That seems wasteful...
+					</p>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<p>
+						Heck, let's do it. This is a <code>col-lg-12</code>. Something to keep in mind with columns is that they each have horizontal paddings of 15px (positive). All in all, for this column we go from <code>container</code> padding +15px -> <code>row</code> margin -15px -> <code>column</code> padding +15px to end up with an offset of 15px. Whew! This also means that there are 30px between columns. 
+					</p>
+				</div>
+			</div>
+		</div>
+
+		<br>
+		
+		<div class="container">
+			<h4 class="text-center">Going bananas with grids</h4>
+			<div class="row">
+				<div class="col-md-4">
+					<img class="img-fluid rounded" src="bananagridlayout.JPG" alt="A drawing of a pretty involved grid layout.">
+				</div>
+				<div class="col-md-8">
+					<p>Let's try to match this wacky grid layout I just drew at left. Looks like there are going to be quite a few nested rows and columns. I don't yet know how to draw borders around every type of column, but maybe you can just imagine it for now.</p>
+				</div>
+			</div>
+		</div>
+		
+		<div class="container text-center shadow border">
+			<div class="row">
+				<div class="col-md-7">
+					<div class="row">
+						<div class="col-md-12">
+							<p>
+								A nice, big row in a column. Check it out. This grid is going to be wack. I should probably write enough in each of these panels to see how text wraps and whatnot.
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<p>
+								Here's another row column. I hope you're happy.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-5">
+					<div class="row">
+						<div class="col-sm-4">
+							<h5>Column #1</h5>
+							<p>
+								It's really the first column!
+							</p>
+						</div>
+						<div class="col-md-4">
+							<h5>Column #2</h5>
+							<p>
+								Is it truly the second column!?
+							</p>
+						</div>
+						<div class="col-md-4">
+							<h5>Column #3</h5>
+							<p>
+								I can't believe it's the third column!
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-md-3">
+					<p>
+						This column is a quarter of the width of the whole grid. 
+					</p>
+				</div>
+				<div class="col-md-6">
+					<p>
+						This column is half the width of the grid, but it is also centered because of the column to the left. This <code>&ltp&gt</code> is also a child of the column and not of a container.
+					</p>
+				</div>
+				<div class="col-md-3">
+					<div class="row">
+						<div class="col-md-12">
+							<p>
+								Tick.
+							</p>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<p>
+								Tock.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row align-items-center">
+				<div class="col-md-4">
+					<div class="row">
+						<p>
+							Young Manchego from Spain.
+						</p>
+					</div>
+					<div class="row">
+						<p>
+							Merlot Bellevetano from Wisconsin.
+						</p>
+					</div>
+					<div class="row">
+						<p>
+							Fromage d'Affonois from France. Is that how you spell it?
+						</p>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="row">
+						<div class="col-md-12">
+							<h2>夢</h2>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<h2>雲</h2>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-6">
+					<p>
+						Well, that's a wrap! At least for this grid. Things I still need to figure out:
+					</p>
+					<ul class="text-left">
+						<li>Aligning row content</li>
+						<li>Justifying content</li>
+						<li>Why are the first two cheeses not centered??</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+		<br>
+
+		<div>
+			<h2 class="text-center">Navs</h2>
 		</div>
 	</body>
 
