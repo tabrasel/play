@@ -27,6 +27,7 @@
 }
 */
 
+
 h1, h2 {
 	margin: 10px 0px;
 }
@@ -34,7 +35,6 @@ h1, h2 {
 .row {
 	margin: 10px 0px;
 	clear: left;
-	
 }
 
 p {
