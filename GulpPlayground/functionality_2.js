@@ -3,5 +3,5 @@ function rasterizeTopTriangle() {
 }
 
 function rasterizeBottomTriangle() {
-	
+
 }

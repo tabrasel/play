@@ -1,0 +1,15 @@
+{
+  "name": "gulpplayground",
+  "version": "1.0.0",
+  "description": "Just a little test to see how these gulp files work.",
+  "main": "functionality_1.js",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tate Brasel",
+  "license": "ISC"
+}
