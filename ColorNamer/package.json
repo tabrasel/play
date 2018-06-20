@@ -1,0 +1,17 @@
+{
+  "name": "colornamer",
+  "version": "1.0.0",
+  "description": "A simple site that identifies colors",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Tate Brasel",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "color-namer": "^1.3.0",
+    "ejs": "^2.6.1",
+    "express": "^4.16.3"
+  }
+}
