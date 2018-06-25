@@ -5,6 +5,11 @@
 		$("search-button").onclick = function() {
 			callAjax();
 		}
+		$("clear").onclick = function() {
+			let gallery = document.querySelector("section");
+			gallery.innerHTML = "";
+			$("search-item").value = "";
+		}
 	};
 
 	function callAjax() {
