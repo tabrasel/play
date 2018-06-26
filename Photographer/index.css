@@ -6,14 +6,14 @@ body {
 	background-color: snow;
 }
 
-section {
+#gallery {
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
 	flex-wrap: wrap;
 }
 
-section div {
+#gallery div {
 	border-radius: 5px;
 	padding: 10px 5px;
 	margin: 5px;
@@ -28,8 +28,4 @@ img {
 	height: 200px;
 	width: auto;
 	margin-bottom: 10px;
-
-
-button {
-	border-radius: 5x;
 }
