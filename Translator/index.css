@@ -1,0 +1,9 @@
+textarea {
+  resize: none;
+}
+
+header {
+	background-color: mediumseagreen;
+	margin-bottom: 30px;
+	padding: 10px;
+}
