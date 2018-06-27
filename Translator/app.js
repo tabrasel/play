@@ -6,20 +6,17 @@
 	app.controller('ctr', function($scope, $http) {
 		
 		$scope.translation = "(No translation)";
+		$scope.errors = "";
 
 		$scope.translate = function() {
-			
-		
-			let url = "http://localhost:3000/?phrase=" + $scope.phrase;
-
-			//alert("Sending: " + url);
-
+			let url = "http://localhost:3000/?to=" + $scope.to + "&phrase=" + $scope.phrase;
+			//alert(url);
 			$http.get(url)
 			    .then(function(response) {
-			    	//alert("Translated!");
 			        $scope.translation = response.data.text;
+
+			        $scope.errors = response.data.from.text.value;
 			    });
-		   
 		};
 	});
 

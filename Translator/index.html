@@ -15,10 +15,28 @@
 		</header>
 
 		<main class="container border shadow" ng-controller="ctr">
-			<textarea cols="50" placeholder="Enter an English phrase to translate" ng-model="phrase" ng-change="translate()"></textarea>
 
-			<h2>Spanish translation:</h2>
-			<p>{{ translation }}</p>
+			<div class="row">
+				<section class="col-md-5">
+					<h2>Source phrase</h2>
+					<textarea cols="50" placeholder="Enter an English phrase to translate" ng-model="phrase" ng-change="translate()"></textarea>
+					<p id="errors">{{ errors }}</p>
+				</section>
+				<div class="col-md-2 text-center">
+					<select ng-model="to" ng-change="translate()">
+						<option value="es">Spanish</option>
+						<option value="fr" selected>French</option>
+						<option value="ja">Japanese</option>
+					</select>
+					<br>
+					<button>Save</button>
+				</div>
+				<section class="col-md-5">
+					<h2>Translated phrase</h2>
+					<p>{{ translation }}</p>
+				</section>
+			</div>
+			
 		</main>
 	</body>
 </html>

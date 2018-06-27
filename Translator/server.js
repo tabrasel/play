@@ -14,29 +14,12 @@ app.use(function(req, res, next) {
 
 // When a get request is made, search for the request query item and return all the resulting image data.
 app.get('/', function(req, res, next) {
-	
-	translate(req.query.phrase, {to: 'es'}).then(function(results) {
+	translate(req.query.phrase, {to: req.query.to}).then(function(results) {
 		res.set('Content-Type', 'application/json');
 		res.send(results);
 	}).catch(function(err) {
 	    console.error(err);
 	});
-
-	/*
-	translate('Hello! Did you dream last night?', {to: 'es'}).then(function(results) {
-		res.set('Content-Type', 'application/json');
-		res.send(results);
-	}).catch(function(err) {
-	    console.error(err);
-	});
-	*/
-
-	/*
-	imageSearch(req.query.search, function(err, results) {
-		res.set('Content-Type', 'application/json');
-		res.send({images: results});
-	});
-	*/
 });
 
 // Listen on port 3000 for requests from clients

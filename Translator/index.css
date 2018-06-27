@@ -1,9 +1,27 @@
 textarea {
   resize: none;
+  width: 100%;
 }
 
 header {
 	background-color: mediumseagreen;
 	margin-bottom: 30px;
 	padding: 10px;
+}
+
+.row {
+	padding: 10px;
+}
+
+section {
+
+	border-left: 5px solid steelblue;
+}
+
+h1 {
+	color: white;
+}
+
+#errors {
+	color: red;
 }
