@@ -9,13 +9,28 @@ header {
 	padding: 10px;
 }
 
-.row {
+.container > .row {
 	padding: 10px;
 }
 
-section {
+.container > div {
+	padding: 20px;
+}
 
+section.input {
 	border-left: 5px solid steelblue;
+}
+
+section.output {
+	border-left: 5px solid mediumseagreen;
+}
+
+.archive-in {
+	color: steelblue;
+}
+
+.archive-out {
+	color: mediumseagreen;
 }
 
 h1 {
@@ -24,4 +39,20 @@ h1 {
 
 #errors {
 	color: red;
+}
+
+#options {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	height: 100%;
+}
+
+#archive {
+	width: 80%;
+}
+
+#archive p {
+	margin: 5px;
 }

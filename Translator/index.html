@@ -11,30 +11,48 @@
 
 	<body ng-app="app">
 		<header class="shadow">
-			<h1 class="text-center">Translator</h1>
+			<h1 class="text-center">Mr. Worldwide</h1>
 		</header>
 
-		<main class="container border shadow" ng-controller="ctr">
+		<main ng-controller="ctr">
 
-			<div class="row">
-				<section class="col-md-5">
-					<h2>Source phrase</h2>
-					<textarea cols="50" placeholder="Enter an English phrase to translate" ng-model="phrase" ng-change="translate()"></textarea>
-					<p id="errors">{{ errors }}</p>
-				</section>
-				<div class="col-md-2 text-center">
-					<select ng-model="to" ng-change="translate()">
-						<option value="es">Spanish</option>
-						<option value="fr" selected>French</option>
-						<option value="ja">Japanese</option>
-					</select>
-					<br>
-					<button>Save</button>
+			<div class="container border shadow">
+				<div class="row">
+					<section class="input col-md-5">
+						<h2>Source phrase</h2>
+						<textarea cols="50" rows="4" placeholder="Enter an English phrase to translate" ng-model="phrase" ng-change="translate()"></textarea>
+						<p id="errors">{{ errors }}</p>
+					</section>
+					<div class="col-md-2">
+						<div id="options" class="border">
+							<select ng-model="to" ng-change="translate()" ng-options="language.code as language.name for language in languages">
+							</select>
+							<button ng-click="archiveEntry()">Archive</button>
+						</div>
+					</div>
+					<section class="output col-md-5">
+						<h2>Translated phrase</h2>
+						<p>{{ translation }}</p>
+					</section>
 				</div>
-				<section class="col-md-5">
-					<h2>Translated phrase</h2>
-					<p>{{ translation }}</p>
-				</section>
+			</div>
+
+			<div class="container d-flex flex-row justify-content-center">
+				<div id="archive" class="border shadow">
+
+					<div class="d-flex flex-row justify-content-between">
+						<h3>Archive</h3>
+						<button ng-click="clearArchive()">Clear</button>
+					</div>
+					
+					<div class="row" ng-repeat="entry in archive">
+						<div class="col-md-12">
+							<p class="archive-in">{{ entry.input }}</p>
+							<p class="archive-out">{{ entry.output }}</p>
+							<hr>
+						</div>
+					</div>
+				</div>
 			</div>
 			
 		</main>
