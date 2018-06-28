@@ -16,33 +16,45 @@
 
 		<main ng-controller="ctr">
 
+			<!-- Main translation panel -->
 			<div class="container border shadow">
 				<div class="row">
+
+					<!-- Source phrase area -->
 					<section class="input col-md-5">
 						<h2>Source phrase</h2>
 						<textarea cols="50" rows="4" placeholder="Enter an English phrase to translate" ng-model="phrase" ng-change="translate()"></textarea>
-						<p id="errors">{{ errors }}</p>
 					</section>
+
+					<!-- Middle language select area -->
 					<div class="col-md-2">
-						<div id="options" class="border">
-							<select ng-model="to" ng-change="translate()" ng-options="language.code as language.name for language in languages">
-							</select>
-							<button ng-click="archiveEntry()">Archive</button>
+						<div id="options" class="border rounded">
+							<select ng-model="sourceLanguage" ng-change="translate()" ng-options="language.code as language.name for language in languages"></select>
+							<button class="swap" ng-click="swapLanguages()">Swap</button>
+							<select ng-model="targetLanguage" ng-change="translate()" ng-options="language.code as language.name for language in languages"></select>
+							
 						</div>
 					</div>
+
+					<!-- Translated phrase area-->
 					<section class="output col-md-5">
-						<h2>Translated phrase</h2>
+						<div class="d-flex flex-row justify-content-between">
+							<h2>Translated phrase</h2>
+							<button class="archive" ng-click="archiveEntry()">Archive</button>
+						</div>
+						<p><a href="http://translate.yandex.com/">Powered by Yandex.Translate</a></p>
 						<p>{{ translation }}</p>
 					</section>
 				</div>
 			</div>
 
+			<!-- Bottom archive list -->
 			<div class="container d-flex flex-row justify-content-center">
 				<div id="archive" class="border shadow">
 
 					<div class="d-flex flex-row justify-content-between">
 						<h3>Archive</h3>
-						<button ng-click="clearArchive()">Clear</button>
+						<button class="clear" ng-click="clearArchive()">Clear</button>
 					</div>
 					
 					<div class="row" ng-repeat="entry in archive">

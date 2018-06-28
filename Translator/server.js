@@ -1,7 +1,13 @@
 // Uses the google-translate-api module by Matheuss (https://www.npmjs.com/package/google-translate-api)
+// Uses the translate module by Francisop (https://www.npmjs.com/package/translate) and the Yandex Translation API (https://translate.yandex.com/developers)
 
 // Import modules
-var translate = require('google-translate-api');
+var googleTranslate = require('google-translate-api');
+
+var yandexTranslate = require('translate');
+trans.engine = "yandex";
+trans.key = "trnsl.1.1.20180628T183211Z.50998dcbe302073b.6abc7c778438b20f07ae58c3a156932d05f743ac";
+
 var express = require('express');
 var app = express();
 
@@ -12,14 +18,24 @@ app.use(function(req, res, next) {
   next();
 });
 
-// When a get request is made, search for the request query item and return all the resulting image data.
+// When a GET request is made, translate the given phrase from the source language to the target language 
 app.get('/', function(req, res, next) {
-	translate(req.query.phrase, {to: req.query.to}).then(function(results) {
+	yandexTranslate(req.query.phrase, {from: req.query.sourcelanguage, to: req.query.targetlanguage}).then(function(results) {
+		res.set('Content-Type', 'application/json');
+		res.send({ tr: results });
+	}).catch(function(err) {
+		console.error(err);
+	});
+	
+	/*
+	GOOGLE TRANSLATE	
+	googleTranslate(req.query.phrase, {from: req.query.sourcelanguage, to: req.query.targetlanguage}).then(function(results) {
 		res.set('Content-Type', 'application/json');
 		res.send(results);
 	}).catch(function(err) {
 	    console.error(err);
 	});
+	*/
 });
 
 // Listen on port 3000 for requests from clients

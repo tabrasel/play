@@ -9,6 +9,19 @@ header {
 	padding: 10px;
 }
 
+button {
+	display: inline-block;
+	text-align: center;
+	border: none;
+	color: white;
+	border-radius: 3px;
+	font-size: 20px;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
 .container > .row {
 	padding: 10px;
 }
@@ -55,4 +68,28 @@ h1 {
 
 #archive p {
 	margin: 5px;
+}
+
+.clear {
+	background-color: tomato;
+}
+
+.clear:hover {
+	background-color: darksalmon;
+}
+
+.swap {
+	background-color: mediumseagreen;
+}
+
+.swap:hover {
+	background-color: darkseagreen;
+}
+
+.archive {
+	background-color: steelblue;
+}
+
+.archive:hover {
+	background-color: cadetblue;
 }
