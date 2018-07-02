@@ -27,12 +27,7 @@
 			let url = "http://localhost:3000/?sourcelanguage=" + $scope.sourceLanguage + "&targetlanguage=" + $scope.targetLanguage + "&phrase=" + $scope.phrase;
 			$http.get(url)
 			    .then(function(response) {
-			    	/*
-			    	GOOGLE TRANSLATE
 			        $scope.translation = response.data.text;
-			        $scope.errors = response.data.from.text.value;
-			        */
-			        $scope.translation = response.data.tr;
 			    }).catch(function(err) {
 			    	console.log("Error: " + err);
 			    });

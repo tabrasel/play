@@ -5,8 +5,8 @@
 var googleTranslate = require('google-translate-api');
 
 var yandexTranslate = require('translate');
-trans.engine = "yandex";
-trans.key = "trnsl.1.1.20180628T183211Z.50998dcbe302073b.6abc7c778438b20f07ae58c3a156932d05f743ac";
+yandexTranslate.engine = "yandex";
+yandexTranslate.key = "trnsl.1.1.20180628T183211Z.50998dcbe302073b.6abc7c778438b20f07ae58c3a156932d05f743ac";
 
 var express = require('express');
 var app = express();
@@ -22,7 +22,7 @@ app.use(function(req, res, next) {
 app.get('/', function(req, res, next) {
 	yandexTranslate(req.query.phrase, {from: req.query.sourcelanguage, to: req.query.targetlanguage}).then(function(results) {
 		res.set('Content-Type', 'application/json');
-		res.send({ tr: results });
+		res.send({ text: results });
 	}).catch(function(err) {
 		console.error(err);
 	});

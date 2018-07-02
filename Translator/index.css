@@ -1,3 +1,7 @@
+body {
+	background-color: snow;
+}
+
 textarea {
   resize: none;
   width: 100%;
@@ -20,6 +24,10 @@ button {
 
 button:hover {
 	cursor: pointer;
+}
+
+.row {
+	background-color: white;
 }
 
 .container > .row {
@@ -64,6 +72,8 @@ h1 {
 
 #archive {
 	width: 80%;
+	background-color: white;
+	z-index: -1;
 }
 
 #archive p {
@@ -92,4 +102,8 @@ h1 {
 
 .archive:hover {
 	background-color: cadetblue;
+}
+
+.nav-item {
+	background-color: white;
 }
