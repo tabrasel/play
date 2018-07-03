@@ -73,7 +73,6 @@ h1 {
 #archive {
 	width: 80%;
 	background-color: white;
-	z-index: -1;
 }
 
 #archive p {
