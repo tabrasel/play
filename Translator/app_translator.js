@@ -2,9 +2,11 @@
 	"use strict";
 
 	angular.module("app")
-		.controller("TranslateController", translateController);
+		.controller("TranslateController", TranslateController);
 
-	function translateController($scope, $http) {
+	TranslateController.$inject = ["$http"];
+
+	function TranslateController($http) {
 		var vm = this;
 
 		///////// BINDABLE MEMBERS ////////////
